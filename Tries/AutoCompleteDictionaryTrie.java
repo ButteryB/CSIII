@@ -76,20 +76,6 @@ public class AutoCompleteDictionaryTrie implements Dictionary, AutoComplete {
    * @return A list containing the up to n best predictions
    */@Override
   public List<String> predictCompletions(String prefix, int numCompletions) {
-    // TODO: Implement this method
-    // This method should implement the following algorithm:
-    // 1. Find the stem in the trie.  If the stem does not appear in the trie, return an
-    //    empty list
-    // 2. Once the stem is found, perform a breadth first search to generate completions
-    //    using the following algorithm:
-    //    Create a queue (LinkedList) and add the node that completes the stem to the back
-    //       of the list.
-    //    Create a list of completions to return (initially empty)
-    //    While the queue is not empty and you don't have enough completions:
-    //       remove the first Node from the queue
-    //       If it is a word, add it to the completions list
-    //       Add all of its child nodes to the back of the queue
-    // Return the list of completions
     prefix = prefix.toLowerCase();
     TrieNode node = root;
     for (int i = 0; i < prefix.length(); i++) {
