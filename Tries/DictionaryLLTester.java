@@ -5,7 +5,7 @@ import java.io.*;
 
 public class DictionaryLLTester {
 
-	private String dictFile = "words.small.txt";
+	private String dictFile = "/workspaces/CSIII/Tries/words.small.txt";
 
 	DictionaryLL emptyDict;
 	DictionaryLL smallDict;

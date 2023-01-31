@@ -5,7 +5,7 @@ import java.io.*;
 
 public class DictionaryBSTTester {
 
-	private String dictFile = "words.small.txt";
+	private String dictFile = "/workspaces/CSIII/Tries/words.small.txt";
 
 	DictionaryBST emptyDict;
 	DictionaryBST smallDict;

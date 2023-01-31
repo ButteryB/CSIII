@@ -8,7 +8,7 @@ public class DictionaryBenchmarking {
 	    int trials = 500;
 
 	    // The text to test on
-	    String dictFile = "dict.txt";
+	    String dictFile = "/workspaces/CSIII/Tries/dict.txt";
 
 	    // The amount of words to increment each step
 	    // You can play around with this

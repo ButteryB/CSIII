@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AutoCompleteDictionaryTrieTester {
 
-	private String dictFile = "words.small.txt";
+	private String dictFile = "/workspaces/CSIII/Tries/words.small.txt";
 
 	AutoCompleteDictionaryTrie emptyDict;
 	AutoCompleteDictionaryTrie smallDict;
