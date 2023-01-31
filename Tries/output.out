@@ -1,0 +1,61 @@
+//TESTING ADDING WORDS (addWord, insert)//
+
+** Test #1: Adding first word to dictionary...
+addWord returned false.
+
+** Test #2: Adding two more words and testing size...
+Size is -1.
+
+** Test #3: Adding more words to dictionary trie (testing size after insertions)...
+Dict size is -1.
+
+** Test #4: Adding duplicate word...
+Adding duplicate word returned false.
+
+** Test #5: Checking size after try to add duplicate word...
+Dict size is -1.
+
+
+//TESTING FOR WORDS IN/OUT OF DICTIONARY (isWord)//
+
+** Test #6: Checking empty string...
+Empty string in dictionary: false.
+
+** Test #7: Checking for word in dictionary...
+'doggoes' in dictionary: false.
+
+** Test #8: Testing word only missing last letter...
+'downhil' in dictionary: false.
+
+** Test #9: Testing word with one extra letter...
+'downhille' in dictionary: false.
+
+** Test #10: Testing for more words in dictionary...
+'test' in dictionary: false. 'testcases' in dictionary: false. 'testone' in dictionary: false.
+
+** Test #11: Testing word with capital letters...
+'TeSt' in dictionary: false.
+
+
+//TESTING AUTO COMPLETE FUNCTIONALITY (predictCompletions)//
+
+** Test #12: 3 completions requested...
+Autocomplete returned the following: 
+
+** Test #13: Testing size of list...
+predictCompletions returned 0 elements.
+
+** Test #14: 6 completions requested, 0 expected...
+predictCompletions found 0 words.
+
+** Test #15: 10 completions requested, 6 expected...
+predictCompletions found 0 elements.
+
+** Test #16: Testing for correctness of 6 words...
+Words returned by predictCompletions: 
+
+** Test #17: 7 completions requested (test for size)...
+predictCompletions returned 0 elements.
+
+** Test #18: Testing if list is sorted from shortest to longest...
+Check above output.Error during runtime: java.lang.IndexOutOfBoundsException: toIndex = 5
