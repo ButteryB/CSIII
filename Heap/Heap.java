@@ -42,6 +42,20 @@ public class Heap {
     }
 
     private void swapDown(int start, int stop) {
+        if((start*2+1)>size){
+            return;
+        }
+        int child1 = start*2+1;
+        int child2 = start*2+2;
+        if(data[child1]>data[start]){
+            swap(child1,start);
+            swapDown(child1,0);
+        }else if(child2>= size){
+            return;
+        }else if(data[child2]>data[start]){
+            swap(child2,start);
+            swapDown(child2,0);
+        }
         
     }
 
@@ -80,7 +94,6 @@ public class Heap {
         
         // uncomment to test in part2 
         // should print like a tree
-        /*
         
         heap.add(1);
         heap.add(2);
@@ -114,6 +127,5 @@ public class Heap {
         heap.print();
         heap.remove();
         heap.print();
-        */
     }
 }
