@@ -12,33 +12,52 @@ public class Heap {
 
     public Heap(int capacity) {
         data = new int[capacity];
+        size = 0;
     }
 
     public void add(int value) {
-        // todo
-        // 1) add (resize if full)
-        // 2) swap up
+        if (size == data.length) {
+            doubleData();
+        }
+        data[size] = value;
+        size++;
+        swapUp(size - 1);
     }
 
     private void swapUp(int bot) {
-        //todo
+        int parent = (bot - 1) / 2;
+        if (data[parent] < data[bot]) {
+            swap(parent, bot);
+            swapUp(parent);
+        }
     }
 
     public void remove() {
-        //todo
+        if (size == 0) {
+            return;
+        }
+        data[0] = data[size - 1];
+        size--;
+        swapDown(0, size - 1);
     }
 
     private void swapDown(int start, int stop) {
-        //todo
+        
     }
 
     // simple helper method that swaps values at indices loc1 and loc2
     private void swap(int loc1, int loc2) {
-
+        int temp = data[loc1];
+        data[loc1] = data[loc2];
+        data[loc2] = temp;
     }
 
     private void doubleData() {
-
+        int[] temp = new int[data.length * 2];
+        for (int i = 0; i < data.length; i++) {
+            temp[i] = data[i];
+        }
+        data = temp;
     }
 
     // part 2
@@ -49,7 +68,7 @@ public class Heap {
 
     @Override
     public String toString() {
-        return "";
+        return "[" + java.util.Arrays.toString(data) + "]";
     }
 
     public static void main(String... a) {
