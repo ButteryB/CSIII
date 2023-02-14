@@ -42,21 +42,28 @@ public class Heap {
     }
 
     private void swapDown(int start, int stop) {
-        if((start*2+1)>size){
+        int child1 = start * 2 + 1;
+        int child2 = start * 2 + 2;
+        if (child1 > stop) {
             return;
         }
-        int child1 = start*2+1;
-        int child2 = start*2+2;
-        if(data[child1]>data[start]){
-            swap(child1,start);
-            swapDown(child1,0);
-        }else if(child2>= size){
+        if (child2 > stop) {
+            if (data[start] < data[child1]) {
+                swap(start, child1);
+            }
             return;
-        }else if(data[child2]>data[start]){
-            swap(child2,start);
-            swapDown(child2,0);
         }
-        
+        if (data[child1] > data[child2]) {
+            if (data[start] < data[child1]) {
+                swap(start, child1);
+                swapDown(child1, stop);
+            }
+        } else {
+            if (data[start] < data[child2]) {
+                swap(start, child2);
+                swapDown(child2, stop);
+            }
+        }
     }
 
     // simple helper method that swaps values at indices loc1 and loc2
@@ -77,12 +84,16 @@ public class Heap {
     // part 2
     public void print() {
         out.println("\n\nPRINTING THE HEAP!\n\n");
-        out.println();
+        int[] temp = new int[size];
+        for(int i = 0;i<size;i++){
+            temp[i] = data[i];
+        }
+        out.println(java.util.Arrays.toString(temp));
     }
 
     @Override
     public String toString() {
-        return "[" + java.util.Arrays.toString(data) + "]";
+        return java.util.Arrays.toString(data);
     }
 
     public static void main(String... a) {
